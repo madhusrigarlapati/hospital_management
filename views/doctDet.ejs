@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+      body{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-image: url('https://cdn-japantimes.com/wp-content/uploads/2019/03/n-medcert-a-20190311.jpg');
+  background-repeat: no-repeat;
+  background-size: cover ;      }
+      fieldset{
+        background-color: white;
+        border-radius: 10px;
+      }
+
+      .m1{
+        height: 98vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+      }
+      .main{
+        align-items: center;
+        border: solid 1px black;
+        padding:20px;
+        background-color: white;
+        border-radius: 10px;
+      }
+      input{
+        border:none;
+        outline: none;
+        }
+      .one{
+        width: 200px;
+        border-radius:20px;
+      }
+      .btn{
+        background-color: #0842ed;
+        color:white;
+        height: 40px;
+        width: 100px;
+        border-radius:20px;
+      }
+      
+  </style>
+  </head>
+
+  <body >
+    <div class="m1" align="center">
+    <div class="main" >
+        <h3>Doctor Name : <%=dsalutation%><%=dname%></span></h3>
+        <%dname%>
+       <strong> Qualification : <%=dqualification %> </strong><br><br>
+        <strong>Specialization : <%=dspecialization %> </strong><br><br>
+        <strong>Success Rate :<%=dsuccessrate %> </strong><br><br>
+        <strong>Previous Hospitals he/she Worked for : <%=dprevioushosp %> </strong><br><br>
+        <strong> To Contact the email id is : <%= demail %> </strong><br><br>
+        
+        <form action="/appo" method="post">
+          <strong>click on the button to request appointment</strong>
+            
+            <input type="text" value="<%=dname%>" name="d1name" style="display:none">
+            <input type="text" value="<%=id5%>" name="pt1name" style="display:none">
+            <button class="btn" type="submit"> Appointment </button>
+        </form>
+
+       
+        
+    </div>
+    </div>
+      
+  </body>
+</html>

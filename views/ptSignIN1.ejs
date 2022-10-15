@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+      input{
+        border:none;
+        outline: none;
+        }
+      body{
+          padding:20px;
+          
+      }
+      .one{
+        width: 250px;
+        border-radius:20px;
+      }
+      .btn{
+        background-color: #0842ed;
+        color:white;
+        height: 40px;
+        width: 100px;
+        border-radius:20px;
+      }
+      fieldset{
+        width:250px;
+        background-color: white;
+        border-radius: 10px;
+      
+      }
+      .a{
+        border: solid 1px black;
+        padding:20px;
+        border-radius: 10px;
+      }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  </head>
+  <body style="margin:40px">
+    <div class="a">
+    <h1>Your Details</h1>
+    <div style="padding-left:30px">
+      <h2 >Name : <%= pname%></h2>
+      <h3>Age : <%= page%></h3>
+      <h3>Weight : <%= pweight%></h3>
+      <h3>Problem : <%= pproblem%></h3>
+      <h3>Gender : <%= pgender%></h3>
+    </div>
+  </div>
+    <br>
+    <hr>
+    <h1> Doctor Details </h1> 
+    <% l.forEach(function(l) { %>
+      <div class="ui segment">
+        <h2> Doctor Name :: <%= l.Name %></h2>
+        <ul>
+            <li>
+              <strong> Doctor Specialization : <%= l.Specialization %></strong>
+            </li>
+            <li >
+              <strong> Doctor Qualification : <%= l.Qualification %></strong>
+            </li>
+        </ul>  
+      </div>
+    <% }); %>
+
+    <hr>
+    <h3> To Know more details about doctor or to take Appoinment please Enter the doctor name and press the submit button</h3>
+    <form action="/doctDet" method="post">
+      
+      <input type="text" value="<%=pname%>" name="p11name" style="display:none">
+      <fieldset>
+        <legend align="left">Enter Doctor Name</legend>
+        <input type="text" name="ddname" class="one" >
+    </fieldset><br><br>
+    
+      <button type="submit" class="btn"> Submit </button>
+    </form><br>
+
+    <form action="/statusChecker" method="post">
+      <strong> If you already took appointment if you want to check the time and date or to message the doctor please click the button check after entering doctor name.   </strong>
+      <fieldset>
+          <legend align="left">Enter Doctor Name</legend>
+          <input type="text" name="d1name" class="one" >
+      </fieldset><br><br>
+      <input type="text" value="<%=pname%>" name="pt2name" style="display:none">
+
+      <button class="btn" type="submit">Check Status</button>
+    </form>
+
+    <!-- <table class="doc_table" style="border: solid 1px black;">
+        <tr style="border: solid 1px black;">
+            <td>
+                Doctor Name
+            </td>
+            <td>
+                Doctor Qualification
+            </td>
+            <td>
+                Doctor Specialization
+            </td>
+            <td>
+                More Details About Doctor
+            </td>
+        </tr>
+
+    </table> -->
+    <p>...</p>
+    <style>
+      body{
+        background-image: url("https://www.xmple.com/wallpaper/blue-gradient-white-linear-1920x1080-c2-87cefa-ffffff-a-105-f-14.svg");
+
+      }
+    </style>
+  </body>
+</html>

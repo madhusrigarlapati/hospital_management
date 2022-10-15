@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+      body{
+        border:solid 1px black;
+        background-image: url("https://www.xmple.com/wallpaper/blue-gradient-white-linear-1920x1080-c2-87cefa-ffffff-a-105-f-14.svg");
+      }
+      form{
+        display:flex;
+        justify-content: space-between;
+      }
+      .btn{
+        background-color: #0842ed;
+        color:white;
+        height: 30px;
+        width: 100px;
+        border-radius:20px;
+      }
+    </style>
+  </head>
+  <body style="margin:40px">
+    <div class="a">
+    <h1>Your Details</h1>
+    <div style="padding-left:30px">
+      <h2 >Name : <%= dsalutation%><%= dname%></h2>
+      <h3>Specialization : <%= dspecialization%></h3>
+      <h3>Qualification : <%= dqualification%></h3>
+      <h3>Success Rate : <%= dsuccessrate%></h3>
+      <h3>Experience : <%= dexperience%></h3>
+      <h3>Email id : <%= demail%></h3>
+      <h3>Previous Hospitals Worked for : <%= dprevhospnames%></h3>
+    </div>
+  </div>
+  <div>
+    <h1> Appointments : </h1>
+    <div style="padding-left:30px">
+      <% if(l.length==0){%>
+        <%= s %>
+      <%} %>
+      <% if(l.length!=0){%>
+        <% l.forEach(e=>{ %>
+          <div class="ui segment">
+            <form action="/doctSignIN2" method="post">
+              <%= e.patientname %>
+              <input name="tim" type="date">
+              <input name="tim1" type="time"min="09:00" max="18:00" required>
+              <input name="dd" value="<%=dname%>" style="display:none">
+              <input name="pp" value="<%=e.patientname%>" style="display:none"> 
+              <button class="btn" style="width: 300px;">Accept Appointment and Give Timming</button>
+            </form>
+            
+          </div>
+        <%})%>
+      <%}%>
+    </div>
+  </div>
+
+  <h1>Message Box :</h1>
+  <div style="padding-left:30px;padding-right:30px" >
+    <% if(m.length==0){%>
+      <%= s1 %>
+    <%} %>
+    <% if(m.length!=0){%>
+      <% m.forEach(e=>{ %>
+        <div class="ui segment">
+         <strong>Message From : <%=e.MessageFrom%> <br>Message : <%=e.Message%></strong>
+         <form action="/docmsg" method="post">
+          <input type="text" value="<%=e.Messageto%>" name="from1" style="display:none">
+          <input type="text" value="<%=e.MessageFrom%>" name="to1" style="display:none">
+          <br>
+          <input type="text" name="m2" placeholder="type your message" style="height:50px"  >
+          <button class="btn" type="submit" >send</button>
+         </form>
+        </div>
+      <%})%>
+    <%}%>
+  </div>
+  </body>
+</html>

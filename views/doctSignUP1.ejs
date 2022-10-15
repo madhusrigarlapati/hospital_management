@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    
+    <style>
+    body {
+      font-family: "Open Sans", sans-serif;
+      /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9Z8yRtbx_7sLTd5T586VbDzJUgFhjGJT-ZA&usqp=CAU"); */
+      background-image: url("https://www.xmple.com/wallpaper/blue-gradient-white-linear-1920x1080-c2-87cefa-ffffff-a-105-f-14.svg");
+
+    }
+    
+    
+</style>
+  </head>
+
+  <body>
+
+    
+    </form>
+
+     <form  action="/dcreate" method="post" align="center" class="row g-3">
+      <div class="col-md-4">
+        <label class="form-label">First name</label>
+        <input name="dfname" type="text" class="form-control" id="validationDefault01" placeholder="First Name"  style="border: solid black 1px;" required>
+      </div>
+      <div class="col-md-4">
+        <label  class="form-label">Last name</label>
+        <input name="dlname" type="text" class="form-control" id="validationDefault02" placeholder="chavva" style="border: solid black 1px;" required>
+      </div>
+      <div class="col-md-4">
+        <label  class="form-label">Username</label>
+        <div class="input-group">
+          <span class="input-group-text" id="inputGroupPrepend2">@</span>
+          <input name="dusername" type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" style="border: solid black 1px;" required>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Email</label>
+        <input name="demail"  type="email" class="form-control" id="validationDefault06" placeholder="example@gmail.com" style="border: solid black 1px;" required>
+      </div>
+      <div class="col-md-4">
+        <label  class="form-label">Create Password</label>
+        <input name="dpassword" type="password" class="form-control" id="validationDefault07" style="border: solid black 1px;" required>
+      </div>
+      <div class="col-md-4">
+        <label  class="form-label">confirm Password</label>
+        <div class="input-group">
+          <input type="password" class="form-control" id="validationDefault08" style="border: solid black 1px;" required>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Age</label>
+        <input name="dage" type="number" class="form-control" id="validationDefault09" style="border: solid black 1px;" required>
+      </div>
+      <div class="col-md-4">
+        <label  class="form-label">Gender</label>
+        <select name="dgender" class="form-select" id="validationDefault10" style="border: solid black 1px;" required>
+          <option selected disabled value=""></option>
+          <option >Female</option>
+          <option >Male</option>
+          <option>other</option>
+        </select>      
+      </div>
+      <div class="col-md-4">
+        <label  class="form-label">Salutation</label>
+        <select name="dsalutation" class="form-select" id="validationDefault11" style="border: solid black 1px;" required>
+          <option selected disabled value=""></option>
+          <option >Ms.</option>
+          <option >Mr.</option>
+          <option >Mrs.</option>
+          <option >other</option>
+        </select> 
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Qualification</label>
+        <input name="dqualification" type="text" class="form-control" id="validationDefault12" style="border: solid black 1px;" required>
+      </div>
+      <div class="col-md-4">
+        <label  class="form-label">Specialization</label>
+        <input name="dspecialization" type="text" class="form-control" id="validationDefault13" style="border: solid black 1px;" required>
+      </div>
+      <div class="col-md-4">
+        <label  class="form-label">Success Rate</label>
+        
+          <input name="dsuccessrate" type="numbers" class="form-control" id="validationDefault14" style="border: solid black 1px;" required>
+
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Experience</label>
+        <input name="dexperience" type="text" class="form-control" id="validationDefault15" style="border: solid black 1px;" required>
+      </div>
+      <div class="col-md-8">
+        <label  class="form-label">Previous Hospital Name he worked for</label>
+        <input name="dprevhospnames" type="text" class="form-control" id="validationDefault16" style="border: solid black 1px;" required>
+      </div>
+      
+      <div>
+        
+      </div>
+      <div class="col-md-6">
+        <label for="validationDefault03" class="form-label">City</label>
+        <input name="dcity" type="text" class="form-control" id="validationDefault03" style="border: solid black 1px;" required>
+      </div>
+      <div class="col-md-3">
+        <label for="validationDefault04" class="form-label">State</label>
+        <input name="dstate" type="text" class="form-control" id="validationDefault03" style="border: solid black 1px;" required>
+      </div>
+      <div class="col-md-3">
+        <label for="validationDefault05" class="form-label">pincode</label>
+        <input name="dpincode" type="text" class="form-control" id="validationDefault05" style="border: solid black 1px;" required>
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" style="border: solid black 1px;" required>
+          <label class="form-check-label" for="invalidCheck2">
+            Agree to terms and conditions
+          </label>
+        </div>
+      </div>
+      <div class="col-12">
+        <button name="dsubmitbtn" class="btn btn-primary" type="submit">Submit form</button>
+      </div>
+    </form>
+      
+
+
+    <script>
+      var password = document.getElementById("validationDefault07")
+      , confirm_password = document.getElementById("validationDefault08");
+
+    function validatePassword(){
+      if(password.value != confirm_password.value) {
+        confirm_password.setCustomValidity("Passwords Don't Match");
+      } else {
+        confirm_password.setCustomValidity('');
+      }
+    }
+
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
+    </script>
+  </body>
+</html>

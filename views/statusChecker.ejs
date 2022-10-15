@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+      body{
+          padding:20px;
+          background-image: url("https://www.xmple.com/wallpaper/blue-gradient-white-linear-1920x1080-c2-87cefa-ffffff-a-105-f-14.svg");
+
+      }
+        form{
+            border: solid 1px black;
+            padding:20px;
+            border-radius: 10px;
+        }
+        
+        .btn{
+            background-color: #0842ed;
+            color:white;
+            height: 40px;
+            width: 100px;
+            border-radius:20px;
+        }
+    </style>
+  </head>
+  <body>
+    <% if (s=="accepted"){ %>
+        <h2><%= d1 %> accepted your appointment %></h2>
+        <br><h3> You can meet him on date : <%=date%> and your slot is on <%=time%>.
+        <br> Doctor is available at Hospital on that time.</h3>
+    <%};%>
+    <% if (s=="pending"){ %>
+         <%=d1%> didn't yet accepted your appointment.
+    <%};%>
+
+    <h2>Message Box : </h2>
+        <form action="/ptmsg" method="post">
+            <input type="text" value="<%=d1%>" name="to" style="display:none">
+            <input type="text" value="<%=p1%>" name="from" style="display:none">
+
+            <input type="text" name="m1" placeholder="type a message to doctor" size="100" style="height: 60px; border-radius: 10px;">
+            <button class="btn" type="submit" >send</button>
+        </form>
+
+    <h2>Message from Doctor : </h2>
+    <div style="padding-left:30px">
+        
+        <% if(m.length!=0){%>
+          <% m.forEach(e=>{ %>
+            <div class="ui segment">
+             <strong>Message From : <%=e.MessageFrom%> <br>Message : <%=e.Message%></strong>
+
+            </div>
+          <%})%>
+        <%}%>
+      </div>    
+
+
+  </body>
+</html>
